@@ -13,13 +13,26 @@ body[a="dark"] { @include dark-appearance; }
 
 @media (prefers-color-scheme: dark) {
   body[a="auto"] { @include dark-appearance; }
+  --color-bg: linear-gradient(0deg, #f470de, #FFC99D);
+  --item-bg: #f5f5f5;
+  --accent: #E207BE;
 }
+
+@media (prefers-color-scheme: light) {
+     :root {
+        --color-bg: linear-gradient(0deg, #f470de, #FFC99D);
+        --item-bg: #f5f5f5;
+        --accent: #E207BE;
+    }
+}
+
+
 // -------------------------------------------- //
 
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
-html, body { background-color: #FAFAFA; }
+html, body { background: var(--color-bg); }
 
 html { height: 100%; }
 
